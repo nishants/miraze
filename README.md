@@ -140,4 +140,6 @@ Then we get following reponse :
 **Coming up...**
  - support **response status** (200, 201, 404..)
  - support for **cookies**
+ - asynchronous actions in controller
+ - services and dependency injection
 
