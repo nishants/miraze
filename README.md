@@ -138,13 +138,6 @@ Then we get following reponse :
 ```
 
 **Coming up...**
-
- - ***controllers*** for templates (injected js module that runs with request param, just before rendering the json template)
- - ***directives*** for templates (links templates and scope variable at runtime)
- - ***repeater*** directive to transform data to rows of values,
- - directive for ***boolean and number types***
- - directive to ***extend and override JSON***.
- - support response headers
  - support **response status** (200, 201, 404..)
  - support for **cookies**
 
