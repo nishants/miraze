@@ -1,6 +1,8 @@
-app.get("/directive").controller(function(scope){
-  scope.param = "found";
-}).sendFile(sample.templatePath());
+app.get("/directive")
+    .sendFile("./sample/directive/template.json")
+    .controller(function(scope){
+      scope.param = "found";
+    });
 
 app.directive("@foo", {
   link: function(scope, body, param, compile){
@@ -14,6 +16,5 @@ app.directive("@foo", {
 app.directive("@bar", {
   link: function(scope, body, param){
     body.otherChild = "bar";
-    expect(param).to.equal("bar-param");
   }
 });
