@@ -1,0 +1,7 @@
+{
+  "message" : "hello",
+  "sum"     : 1,
+  "boolean" : false,
+  "list"    : ["one", "two", "three", "four", "five"],
+  "repeater": [{"id": 1}, {"id": 3}, {"id": 5}, {"id": 7}, {"id": 9}]
+}

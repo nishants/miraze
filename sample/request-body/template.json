@@ -1,0 +1,11 @@
+{
+  "body": {
+    "message" : "Create Successfully !",
+    "items" : {
+      "@repeat": "item in request.body.items",
+      "id"     : "{{$index}}",
+      "name"   : "{{item.name}}"
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "body": {
+    "id"   :"{{request.path.id}}",
+    "name" : "someone"
+  }
+}

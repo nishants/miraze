@@ -1,0 +1,12 @@
+{
+  "body": {
+    "list"   : {
+      "@repeat" : "outer in [['a1','a2'],['b1','b2']]",
+      "id" : "{{$index + 1}}",
+      "value" :{
+        "@repeat" : "inner in outer",
+        "id" : "{{inner}}"
+      }
+    }
+  }
+}
