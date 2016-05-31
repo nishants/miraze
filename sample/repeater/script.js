@@ -1,4 +1,4 @@
-var mirage = require("./src/mirage");
+var miraze = require("./src/miraze");
 
-var app  = mirage.create();
+var app  = miraze.create();
 app.get("/repeater").sendFile("sample/repeater/template.json");

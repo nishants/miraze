@@ -2,7 +2,7 @@
   "name": "miraze",
   "version": "1.0.1",
   "description": "Quickly create RESTful http stubs.",
-  "main": "index.js",
+  "main": "miraze.js",
   "directories": {
     "test": "test"
   },
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/nishants/miraze.git"
   },
   "keywords": [
-    "mirage",
+    "miraze",
     "REST",
     "stubbing",
     "javacript",

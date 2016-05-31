@@ -1,4 +1,4 @@
-# Mirage
+# Miraze
 
  - This is a framework for quickly stubbing a RESTful service. 
  - Defining a webserver purely on basis of request/response json contracts. 
@@ -16,12 +16,12 @@ You can use this to quickly setup a web-server that can stub a RESTful  remote s
 ## A sample script :
 
 ```javascript
-var mirage     = require("./mirage").create();
-mirage.post("/user").sendFile("../sample/create.json");
-mirage.get("/user/:id").sendFile("../sample/request-path-param.json");
-mirage.get("/user").sendFile("../sample/request-url-param.json");
+var miraze     = require("./miraze").create();
+miraze.post("/user").sendFile("../sample/create.json");
+miraze.get("/user/:id").sendFile("../sample/request-path-param.json");
+miraze.get("/user").sendFile("../sample/request-url-param.json");
 
-mirage.app.listen(3000, function () {
+miraze.app.listen(3000, function () {
  console.log('Example app listening on port 3000!');
 });
 ```
@@ -39,7 +39,7 @@ Given a __hello.json__ is :
 ```
 And following url mapping is declared 
 ```javascript
-mirage.post("/user").sendFile("../sample/hello.json")
+miraze.post("/user").sendFile("../sample/hello.json")
 ```
 
 Then making a __GET__ request to __'/user'__ results in : 
@@ -53,7 +53,7 @@ Then making a __GET__ request to __'/user'__ results in :
 Given we declare following url :
 
 ```javascript
- mirage.get("/user/:id").sendFile("../sample/request-path-param.json");
+ miraze.get("/user/:id").sendFile("../sample/request-path-param.json");
 ```
 and __request-path-param.json__ is : 
 ```javascript
@@ -75,7 +75,7 @@ Then if a request is made to url **"user/101"**, above template renders to :
 Given we declare following url :
 
 ```javascript
-mirage.get("/user").sendFile("../sample/request-url-param.json");
+miraze.get("/user").sendFile("../sample/request-url-param.json");
 ```
 
 and __request-url-param.json__ is : 
@@ -102,7 +102,7 @@ Then if a request is made to url __"/user?search=searchme&page=32&size=21"__; th
 
 Given we declare following url :
 ```javascript
-mirage.post("/user").sendFile("../sample/create.json");
+miraze.post("/user").sendFile("../sample/create.json");
 ```
 and __create.json__ is : 
 ```json

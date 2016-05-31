@@ -1,5 +1,5 @@
 var expect    = require('chai').expect,
-    miraze    = require('../src/mirage');
+    miraze    = require('../src/miraze');
 
 describe('app.directive', function() {
   it('should user directive to parse temlpates', function () {

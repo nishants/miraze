@@ -1,12 +1,12 @@
 var expect  = require('chai').expect,
-    mirage  = require("../src/mirage"),
+    miraze  = require("../src/miraze"),
     fixture = require("./support/fixture"),
     request = require('supertest'),
     app;
 
 describe('Mirage', function() {
   beforeEach(function(){
-    app = mirage.create();
+    app = miraze.create();
   });
 
   it('[templating] should add request header in template scope', function (done) {
