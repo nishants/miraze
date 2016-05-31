@@ -16,6 +16,7 @@ describe('app.directive', function() {
 
     app.directive("@foo", {
       link: function(scope, body, param, compile){
+        expect(param).to.equal("foo-param");
         return compile(scope, {
           child: "{{param}}",
           "@bar": "bar-param",

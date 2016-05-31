@@ -127,4 +127,38 @@ describe('Mirage', function() {
     });
   });
 
+  describe('app.directive', function() {
+    it('should user directive to parse temlpates', function (done) {
+      var sample = fixture.sample("directive");
+      app.get("/directive").controller(function(scope){
+        scope.param = "found";
+      }).sendFile(sample.templatePath());
+
+      app.directive("@foo", {
+        link: function(scope, body, param, compile){
+          return compile(scope, {
+            child: "{{param}}",
+            "@bar": "bar-param",
+          });
+        }
+      });
+
+      app.directive("@bar", {
+        link: function(scope, body, param){
+          body.otherChild = "bar";
+          expect(param).to.equal("bar-param");
+        }
+      });
+
+      request(app.app)
+          .get("/directive")
+          .expect("Content-Type", /json/)
+          .expect(200)
+          .end(function(err, res) {
+            expect(res.body).to.eql(sample.responseBody());
+            done();
+          });
+    })})
+
+
 });
