@@ -1,3 +1,6 @@
 {
-  "headers" : {"My-Header" : "{{request.headers['my-header']}}"}
+  "headers" : {"My-Header" : "{{request.headers['my-header']}}"},
+  "body"    : {
+    "message" : "Response has 'my-header' = '{{request.headers['my-header']}}', just like the request."
+  }
 }
