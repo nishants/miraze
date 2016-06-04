@@ -24,6 +24,9 @@ module.exports  = {
       },
       directive: function(name, definition){
         return compiler.directive(name, definition);
+      },
+      https: function(){
+        return this;
       }
     };
   },

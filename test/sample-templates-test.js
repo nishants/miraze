@@ -2,6 +2,7 @@ var expect  = require('chai').expect,
     miraze  = require("../src/miraze"),
     fixture = require("./support/fixture"),
     request = require('supertest'),
+    fs      = require("fs"),
     app;
 
 describe('Mirage', function() {
@@ -21,6 +22,7 @@ describe('Mirage', function() {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(!!err).to.equal(false);
           expect(res.body).to.eql(sample.responseBody());
           done();
         });
@@ -40,6 +42,7 @@ describe('Mirage', function() {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(!!err).to.equal(false);
           expect(res.header["my-header"]).to.equal(expectedHeader);
           done();
         });
@@ -57,6 +60,7 @@ describe('Mirage', function() {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(!!err).to.equal(false);
           expect(res.body).to.eql(sample.responseBody());
           done();
         });
@@ -73,6 +77,7 @@ describe('Mirage', function() {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(!!err).to.equal(false);
           expect(res.body).to.eql(sample.responseBody());
           done();
         });
@@ -89,6 +94,7 @@ describe('Mirage', function() {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(!!err).to.equal(false);
           expect(res.body).to.eql(sample.responseBody());
           done();
         });
@@ -106,6 +112,7 @@ describe('Mirage', function() {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function(err, res) {
+          expect(!!err).to.equal(false);
           expect(res.body).to.eql(controller.responseBody());
           done();
         });
@@ -121,6 +128,7 @@ describe('Mirage', function() {
           .expect("Content-Type", /json/)
           .expect(200)
           .end(function(err, res) {
+            expect(!!err).to.equal(false);
             expect(res.body).to.eql(repeater.responseBody());
             done();
           });
@@ -155,10 +163,31 @@ describe('Mirage', function() {
           .expect("Content-Type", /json/)
           .expect(200)
           .end(function(err, res) {
+            expect(!!err).to.equal(false);
             expect(res.body).to.eql(sample.responseBody());
             done();
           });
     })})
 
+  describe('SSL', function() {
+    it('should accept ssl requests', function (done) {
+      var sample = fixture.sample("https");
 
+      app.https()
+          .get("/secured/user")
+         .sendFile(sample.templatePath());
+
+      var agent = request.agent(app.app);
+      request.agent(app.app)
+          .get("/blabla")
+          .ca(fs.readFileSync('test/fixtures/ssl/client.crt'))
+          .expect(200)
+          .end(function(err, res) {
+            expect(!!err).to.equal(true);
+            expect(res.body).to.eql(sample.responseBody());
+            done();
+          });
+
+    });
+  });
 });
