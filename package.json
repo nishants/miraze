@@ -34,7 +34,7 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "extend": "^3.0.0",
-    "jso-ng": "^1.0.3"
+    "jso-ng": "1.0.5"
   },
   "devDependencies": {
     "supertest": "^1.2.0",

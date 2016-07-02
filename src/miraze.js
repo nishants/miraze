@@ -1,10 +1,15 @@
 var express     = require('express'),
     mappings    = require('./url-mapping'),
     bodyParser  = require('body-parser'),
+    fs          = require('fs'),
     compiler    = require('jso-ng').create();
 
 var compile  = function(scope , template){
-  return compiler.compile(scope , template);
+  return compiler.compile(scope , template, {
+    getTemplate: function(path){
+      return fs.readFileSync(path);
+    }
+  });
 };
 module.exports  = {
   create: function(){

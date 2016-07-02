@@ -1,0 +1,5 @@
+{
+  "body" : {
+    "@include" : "./sample/include/__partial.json"
+  }
+}

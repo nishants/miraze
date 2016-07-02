@@ -133,6 +133,21 @@ describe('Mirage', function() {
             done();
           });
     });
+
+    it('[include json] should include json template', function (done) {
+      var repeater = fixture.sample("include");
+      app.get("/include").sendFile(repeater.templatePath());
+
+      request(app.app)
+          .get("/include")
+          .expect("Content-Type", /json/)
+          .expect(200)
+          .end(function(err, res) {
+            expect(!!err).to.equal(false);
+            expect(res.body).to.eql(repeater.responseBody());
+            done();
+          });
+    });
   });
 
   describe('app.directive', function() {
