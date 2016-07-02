@@ -137,6 +137,42 @@ Then we get following reponse :
 }
 ```
 
+## Include templates by path
+
+Given we declare following url :
+```javascript
+miraze.get("/include").sendFile("sample/include/__partial.json");
+```
+and __template.json__ is :
+```json
+{
+  "body" : {
+    "source" : "parent-template",
+    "@include" : "sample/include/__partial.json"
+  }
+}
+```
+And sample/include/____partial.json__ exists as
+```json
+{
+  "message"   : "hello",
+  "sum"       : "{{0 + 1 }}",
+  "boolean"   : "{{1 == 2}}",
+  "list"      : "{{ 'one,two,three,four,five'.split(',') }}",
+}
+```
+
+Then we get following reponse :
+```json
+{
+  "source" : "parent-template",
+  "boolean": false,
+  "list": ["one", "two", "three", "four", "five"],
+  "message": "hello",
+  "sum": 1
+}
+```
+
 **Coming up...**
  - support **response status** (200, 201, 404..)
  - support for **cookies**

@@ -1,6 +1,6 @@
 {
   "body" : {
     "source" : "parent-template",
-    "@include" : "./sample/include/__partial.json"
+    "@include" : "sample/include/__partial.json"
   }
 }
