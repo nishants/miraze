@@ -178,4 +178,7 @@ Then we get following reponse :
  - support for **cookies**
  - asynchronous actions in controller
  - services and dependency injection
+ - route by url params
+ - support for xml files
+ - dynamic temlpates by controller
 
