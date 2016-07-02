@@ -141,7 +141,7 @@ Then we get following reponse :
 
 Given we declare following url :
 ```javascript
-miraze.get("/include").sendFile("sample/include/__partial.json");
+miraze.get("/include").sendFile("sample/include/template.json");
 ```
 and __template.json__ is :
 ```json
