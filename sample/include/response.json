@@ -1,1 +1,14 @@
-{"origin" : "partial"}
+{
+  "source" : "parent-template",
+  "boolean": false,
+  "list": ["one", "two", "three", "four", "five"],
+  "message": "hello",
+  "repeater": [
+    {"id": 1},
+    {"id": 3},
+    {"id": 5},
+    {"id": 7},
+    {"id": 9}
+  ],
+  "sum": 1
+}
