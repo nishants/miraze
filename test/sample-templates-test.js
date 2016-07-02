@@ -169,7 +169,7 @@ describe('Mirage', function() {
           });
     })})
 
-  describe('SSL', function() {
+  describe.skip('SSL', function() {
     it('should accept ssl requests', function (done) {
       var sample = fixture.sample("https");
 
