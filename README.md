@@ -3,11 +3,12 @@
  - This is a framework for quickly stubbing a RESTful service. 
  - Defining a webserver purely on basis of request/response json contracts. 
  - Parsing JSON templates, based on request body/path/query params.
-
+ - Demo here : https://github.com/nishants/miraze-demo 
+ - 
 ## JSO-NG
-
  - JSO-NG is a templating language for serving json content. \
  - It extends the notion of compiling html templates to json.
+ - Find it here : https://github.com/nishants/jso-ng
 
 ## So what can you do with this ?
 
