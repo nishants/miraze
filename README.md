@@ -4,7 +4,7 @@
  - Defining a webserver purely on basis of request/response json contracts. 
  - Parsing JSON templates, based on request body/path/query params.
  - Demo here : https://github.com/nishants/miraze-demo 
- - 
+
 ## JSO-NG
  - JSO-NG is a templating language for serving json content. \
  - It extends the notion of compiling html templates to json.
