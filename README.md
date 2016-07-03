@@ -148,7 +148,6 @@ and __template.json__ is :
 ```json
 {
   "body" : {
-    "source" : "parent-template",
     "@include" : "sample/include/__partial.json"
   }
 }
@@ -166,7 +165,6 @@ And sample/include/____partial.json__ exists as
 Then we get following reponse :
 ```json
 {
-  "source" : "parent-template",
   "boolean": false,
   "list": ["one", "two", "three", "four", "five"],
   "message": "hello",
